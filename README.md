@@ -4,10 +4,10 @@
 Laboratório para investigação e Troubleshooting de arquivos de chave privada em formato PEM que apresentam problemas de estrutura ou formatação.
 
   
-O repositório reúne pequenos scripts PowerShell usados para **inspecionar a estrutura física do arquivo**, **medir e validar o payload Base64/bloco cifrado** e **reconstruir a moldura PEM** sem alterar o conteúdo criptográfico do bloco.
+Esse repositório reúne pequenos scripts PowerShell usados para **inspecionar a estrutura física do arquivo**, **medir e validar o payload Base64/bloco cifrado** e **reconstruir a moldura PEM** sem alterar o conteúdo criptográfico do bloco.
 
   
-> **Objetivo:** investigar o arquivo e corrigir problemas de estrutura/formatação PEM quando aplicável.  
+> **Objetivo:** É investigar o arquivo e corrigir problemas de estrutura/formatação PEM quando aplicável.  
 
 ## Contexto
 
