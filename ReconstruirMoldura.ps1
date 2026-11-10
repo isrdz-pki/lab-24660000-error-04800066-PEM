@@ -9,9 +9,9 @@ $b64   = @($l | Where-Object { $_ -match '^[A-Za-z0-9+/]+={0,2}$' })
 $end   = @($l | Where-Object { $_ -like '-----END*' })[0]
 
 if ($hdr.Count -gt 0) {
-    $new = @($begin) + $hdr + @('') + $b64 + @($end)   # cifrado: cabeçalhos + branco
+    $new = @($begin) + $hdr + @('') + $b64 + @($end)   
 } else {
-    $new = @($begin) + $b64 + @($end)                  # sem senha: nada entre BEGIN e dados
+    $new = @($begin) + $b64 + @($end)                  
 }
 
 [System.IO.File]::WriteAllText($dst, ($new -join "`n") + "`n")
