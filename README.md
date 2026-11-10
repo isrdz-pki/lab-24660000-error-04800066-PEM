@@ -1,7 +1,7 @@
 # Lab — Erro `04800066` / PEM
 
 
-Laboratório para investigação e Troubleshooting de arquivos de chave privada em formato PEM que apresentam problemas de estrutura ou formatação.
+Criei esse laboratório para Troubleshooting de arquivos .key que apresentam problemas de estrutura ou formatação.
 
   
 Esse repositório reúne pequenos scripts PowerShell usados para **inspecionar a estrutura física do arquivo**, **medir e validar o payload Base64/bloco cifrado** e **reconstruir a moldura PEM** sem alterar o conteúdo criptográfico do bloco.
@@ -13,19 +13,15 @@ Esse repositório reúne pequenos scripts PowerShell usados para **inspecionar a
 
 Um dos erros investigados neste laboratório é:
 
-  
 ```text
 
 error:04800066:PEM routines::bad end line
 
 ```
 
-
 Esse tipo de erro está relacionado à leitura da estrutura PEM. Um arquivo PEM normalmente possui uma moldura composta por uma linha `BEGIN`, eventualmente cabeçalhos, um payload Base64 e uma linha `END`.
-
   
 O laboratório permite separar o problema em partes:
-
 
 1. verificar a estrutura física do arquivo;
 
@@ -257,10 +253,6 @@ O arquivo reconstruído é gravado separando corretamente os componentes da mold
 
   
 
-> **Atenção:** este procedimento deve ser utilizado como etapa de diagnóstico/correção estrutural. O arquivo original deve ser preservado e nunca sobrescrito.
-
-  
-
 ---
 
 # Fluxo de investigação
@@ -423,21 +415,6 @@ Ele não executa uma operação de descriptografia nem recriptografa a chave.
 Portanto, uma reconstrução estrutural bem-sucedida não significa que a chave privada esteja matematicamente válida, que a senha seja conhecida ou que o arquivo possa ser utilizado por qualquer aplicação.
 
 ---
-
-# Relação com o erro `04800066`
-
-O laboratório foi organizado para investigar especificamente problemas relacionados à leitura de PEM e ao erro:
-
-
-```text
-
-04800066
-
-PEM routines
-
-bad end line
-
-```
 
 O diagnóstico deve distinguir pelo menos três possibilidades:
 
